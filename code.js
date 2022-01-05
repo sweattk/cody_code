@@ -4,18 +4,31 @@ var timerEl = document.getElementById("timer");
 var time = 100;
 var timerInterval;
 
+var gameIndex = 0;
+
 function startQuiz() {
+    timerEl.textContent = time;
     timerInterval = setInterval(Function () {
-        time--;
-        timerEl = time;
-        if (time <=0) {
-            endQuiz();
-        }
-    } 1000)
-}
+        }, 1000);
+        
+
+var questionDiv = document.createElement("div");
 
 function endQuiz() {
-    
+    clearInterval(timerInterval);
 }
 
 startBtn.onclick = startQuiz;
+
+
+
+
+        time--;
+        timerEl.textContent = time;
+        if (time <=0) {
+            endQuiz();
+        }
+
+    
+}
+
